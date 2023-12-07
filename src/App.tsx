@@ -1,4 +1,4 @@
-import './main.scss';
+import './App.css';
 import Countdown from "react-countdown/dist/LegacyCountdown";
 import StartButton from "./components/StartButton";
 import PauseButton from "./components/PauseButton";
@@ -9,7 +9,7 @@ import Settings from "./components/Settings";
 function App() {
   return (
     <main>
-        <Timer/>
+      <Timer/>
     </main>
   )
 }
