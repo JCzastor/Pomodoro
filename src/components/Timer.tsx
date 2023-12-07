@@ -75,7 +75,7 @@ function Timer() {
                 return switchMode();
             }
             tick();
-        }, 10);
+        }, 1000);
 
         return () => clearInterval(interval);
       })
@@ -85,13 +85,14 @@ function Timer() {
 
     const minutesLeft = Math.floor(seconds / 60);
     let secondsLeft = seconds % 60;
-    if(secondsLeft < 10) secondsLeft = '0' + secondsLeft;
+    let secondsLeftTxt = secondsLeft.toString()
+    if(secondsLeft < 10) secondsLeftTxt = '0' + secondsLeft;
 
 
     return (
         <div className="timer">
             <div className="progressBar">
-                <CircularProgressbar value={percentage} text={minutesLeft + ':' + secondsLeft} styles={
+                <CircularProgressbar value={percentage} text={minutesLeft + ':' + secondsLeftTxt} styles={
                     buildStyles({
                     textColor: '#eee',
                     pathColor: mode === 'work' ? red : green,
